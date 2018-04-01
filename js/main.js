@@ -99,11 +99,11 @@ function init_Widgets()
     // TODO: Fill this in for the GUI.
     
     $("#texture_map_URL").change( function() {
-        load_texture( $(this).val() );
+        // load_texture( $(this).val() );
         // console.log( $(this).val() );
         } );
     $("#obj_URL").change( function() {
-        load_OBJ( $(this).val() );
+        // load_OBJ( $(this).val() );
         // console.log( $(this).val() );
         } );
     
@@ -111,7 +111,7 @@ function init_Widgets()
         /// Recompute weights when we enter manipulate mode.
         if( $('input[name=mouse_mode]:checked').val() === 'mouse_manipulate_handles' )
         {
-            compute_bbw_weights();
+            // compute_bbw_weights();
             needs_redisplay();
         }
         } );
@@ -223,6 +223,7 @@ async function receive()
     let data = await socket.receive();
     
     // TODO: Process the data. You can await more data if needed.
+    console.log( data );
     
     needs_redisplay();
     
