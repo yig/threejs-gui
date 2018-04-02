@@ -6,4 +6,4 @@ To run:
 
 1. Launch `./relay.py`
 2. Run a web server (e.g. `python3 -m http.server`) and browse to `http://localhost:8000/'.
-3. Run your Python code that calls `relay.send_data()`.
+3. Run your Python code that calls `relay.send_data()`. For example, run `python3 relay_test.py`.
