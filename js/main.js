@@ -297,8 +297,16 @@ function init_Widgets()
 async function init_socket()
 {
     socket = new WebSocketClient;
-    await socket.connect('ws://localhost:9876');
-    console.log( "Connected: ", socket.connected );
+    
+    // Socket from URL in modern JavaScript: https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+    var url = new URL( window.location.href );
+    var port = 9876;
+    if( url.searchParams.has("port") ) {
+        port = parseInt( url.searchParams.get("port") );
+    }
+    
+    await socket.connect('ws://localhost:' + port);
+    console.log( "Connected on port " + port + ": ", socket.connected );
     
     // Call receive, which is an asynchronous function.
     receive();
